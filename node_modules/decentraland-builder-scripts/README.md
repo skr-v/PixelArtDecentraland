@@ -1,0 +1,3 @@
+# decentraland-builder-scripts
+
+TODO
