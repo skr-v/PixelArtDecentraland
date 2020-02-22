@@ -1,57 +1,95 @@
-# Lemursiv
+# PixelArtDCL
+Advanced Pixel Art Colab Project for Decentraland
 
-This is the github repository for Lemursiv.
+Based on Nico Earnshaw's Remote Mural for DCL
+https://github.com/decentraland-scenes/Remote-mural
+also based on Tony Crowe's https://github.com/tcrowe/sample-sync-rest
 
-Also known as, Pixels for Madagascar @ PhiAum Estate.
+This repo is for additions and advancements required for the Lemursiv scene at Madagascar DCL.
 
-Lemursiv is a Decentraland nature preservation awareness project zone inside the PhiAum Estate, a showcase area of blockchain technology for charitable purposes and community collaboration.  
+First README follows below
 
-Increase your trees planted number by creating pixel art pictures with your friends together in Decentraland.  Collaborative art pictures go up for auction and the proceeds help to plant more trees in real life Madagascar.  Top pixel art participants recieve NFTs from our best community creations.  Explore our scene, join in some art, help our planet.  
+# Remote mural
 
-***  All trees planted are REAL TREES being planted in Madagascar, planted by Eden Projects.  https://edenprojects.org/
+A scene that uses a server (mongodb) and a REST API to sync a scene state amongst multiple users. You can paint pixels in a mural that other users can see. The colors of each pixel are stored in a remote server.
 
+- Create a REST server
+- Call REST API
 
-Lemursiv has been developed to exhibit the unique ecosystem of Madagascar, focusing on raising awareness for lemurs and their habitat. The project's goal is to replant trees in Madagascar and save its endemic and endangered species from the clearing of forests for farm land. Lemursiv aims to be a fun, educational, and casually collaborative experience while also raising awareness for an amazing charity https://edenprojects.org/
+![](screenshot/screenshot.png)
 
+<!--
+[Explore the scene](): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
+-->
 
-## Technologies
+**Install the CLI**
 
-Lemursiv makes use of:
-* Decentraland sdk (https://docs.decentraland.org/)
-* Pixel art (https://github.com/decentraland-scenes/Remote-mural)
-* Smoke system (https://github.com/decentraland-scenes/Smoke)
-* Custom events (https://docs.decentraland.org/development-guide/custom-events/)
-* User interface (https://github.com/decentraland-scenes/Mining-rocks)
-* Donation systems (QR codes in scene)
-* Sounds (https://docs.decentraland.org/development-guide/sounds/)
+Download and install the Decentraland CLI by running the following command
 
+```bash
+npm i -g decentraland
+```
 
-## Launch
-
-Lemursiv began late August 2019 and will be playable from 20th February 2020 as part of Decentraland's public launch. 
-
-## Credits
-
-#### Creators
-
-* KJWalker
-* SeanTrees
-* FGR3D
-* Lastraum
-* Thanks to the DCL team for their support and guidance creating an MVP for launch. 
-
-#### Sounds
-
-1. https://freesound.org/people/ShannonAHoniball/sounds/363133/
-2. https://www.youtube.com/watch?v=rybC3aDWZes
-3. https://freesound.org/people/CHRISFOPFILMS/sounds/277427/
-4. https://freesound.org/people/Olivaque/sounds/181426/
-5. https://freesound.org/people/AndrewJonesFoto/sounds/361899/
-6. https://freesound.org/people/vollkornbrot/sounds/149924/
-7. https://freesound.org/people/Christopherderp/sounds/342204/
-8. https://freesound.org/people/Benboncan/sounds/67261/
-9. https://freesound.org/people/Capitalmind/sounds/349470/
+For a more details, follow the steps in the [Installation guide](https://docs.decentraland.org/documentation/installation-guide/).
 
 
+**Previewing the scene**
 
+Once you've installed the CLI, download this example and navigate to its directory from your terminal or command prompt.
 
+#### Run the REST server
+
+(In another terminal window)
+
+```sh
+# from the project root
+cd server
+
+# install node dependencies
+npm install
+
+# run build
+npm run build
+
+# start the server
+npm start
+```
+
+#### Run the scene preview
+
+```sh
+# from the project root
+cd scene
+
+# install node dependencies
+npm install
+
+# start the preview
+dcl start
+```
+
+#### Run the db view page
+
+```sh
+cd client
+
+npm install
+
+npm run build
+
+npm start
+```
+
+Open multiple browser tabs by copying the preview URL. Interact with the pixels on one tab to see that it also changes on other tabs as well.
+
+Any dependencies are installed and then the CLI will open the scene in a new browser tab automatically.
+
+**Usage**
+
+Click on a color on the palette on the right. Once a color is selected, you can paint the pixels on the wall with that color. Other users will see the same wall, painted with the same colors.
+
+Learn more about how to build your own scenes in our [documentation](https://docs.decentraland.org/) site.
+
+## Copyright info
+
+This scene is protected with a standard Apache 2 licence. See the terms and conditions in the [LICENSE](/LICENSE) file.
