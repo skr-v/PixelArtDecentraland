@@ -1,4 +1,4 @@
-# PixelArtDCL
+# PixelArtDecentraland
 Advanced Pixel Art Colab Project for Decentraland
 
 Based on Nico Earnshaw's Remote Mural for DCL
