@@ -209,7 +209,24 @@ clickPixel(pix: Entity) {
     // transparent
     color = null
   }
+
+  // set the pixel color locally first
+  if (color) {
+    if (wallPixelColorMaterial[color]){ 
+      let newMaterial = wallPixelColorMaterial[color]
+      pix.removeComponent(Material)
+      pix.addComponentOrReplace(newMaterial)
+    } else {
+      log("pixel color" + color + " not supported on " + x + " & " + y)
+    }   
+
+  } else {
+    pix.removeComponent(Material)
+    pix.addComponentOrReplace(wallPixelTransparentMaterial)
+  }
+
   
+  // then post the data to the server
   let url = `${this.station}/api/pixels/pixel`
   let method = 'POST'
   let headers = { 'Content-Type': 'application/json' }
@@ -226,7 +243,7 @@ clickPixel(pix: Entity) {
       log('error sending pixel change')
     }
   })
-  getFromServer(this.station)
+
 }
 
 }

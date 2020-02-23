@@ -1,5 +1,5 @@
-// how often to refresh scene, in seconds
-export const refreshInterval: number = 1
+// how often to refresh scene, in seconds 
+export const refreshInterval: number = 5
 
 
 
@@ -121,4 +121,3 @@ export const swatchColors = [
   "#2C0000"
   // paletteColor
 ]
-
