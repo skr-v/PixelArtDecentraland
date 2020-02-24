@@ -45,14 +45,15 @@ export function getFromServer(station) {
         let response = await fetch(url)
         let json = await response.json()
         log(json)
+        
         for (let pixel of pixels.entities){
           let x = pixel.getComponent(Pixel).x
           let y = pixel.getComponent(Pixel).y
           let pix = json.find((p)=> p.x === x && p.y === y )
           if(pix && pix.color){
             if (wallPixelColorMaterial[pix.color]){
-			  let newMaterial = wallPixelColorMaterial[pix.color]
-			  pixel.removeComponent(Material)
+			        let newMaterial = wallPixelColorMaterial[pix.color]
+			        pixel.removeComponent(Material)
               pixel.addComponentOrReplace(newMaterial)
              }
              else{
@@ -60,7 +61,7 @@ export function getFromServer(station) {
              }   
           }
           else {
-			pixel.removeComponent(Material)
+			      pixel.removeComponent(Material)
             pixel.addComponentOrReplace(wallPixelTransparentMaterial)
           }
         }
